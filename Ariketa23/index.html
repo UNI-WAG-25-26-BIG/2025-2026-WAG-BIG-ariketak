@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>Egin klik hemen irudi berria agertzeko</button>
+    <br>
+    <br>
+    <script>
+        window.onload = function ()
+        {
+            var zBotones = document.getElementsByTagName("button");
+            zBotones[0].addEventListener("click",agurtu);
+            irudiak=["saludo1.jpg", "saludo2.jpg","saludo3.jpg","saludo4.jpg"];
+            kont=0;
+            ezabatutakoak=[];
+        };
+        function agurtu() {
+            if (kont == 4) {
+                alert("Ezin da irudi gehiago atera");
+            } else {
+                if (ezabatutakoak.length > 0)
+                {
+                    var irudia = ezabatutakoak.pop();
+                }
+                else
+                {
+                    var irudia = document.createElement("img");         // Create a <button> element
+                    irudia.src = "img/" + irudiak[kont];
+                }
+                document.body.appendChild(irudia);
+
+                irudia.addEventListener("dblclick", function () {
+                    ezabatu(irudia)
+                });
+                kont++;
+            }
+        }
+        function ezabatu(zein){
+            document.body.removeChild(zein);
+            kont--;
+            ezabatutakoak.push(zein);
+        }
+
+    </script>
+</body>
+</html>

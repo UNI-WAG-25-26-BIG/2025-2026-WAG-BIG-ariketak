@@ -14,7 +14,7 @@ function Faktoriala()
     }
    
 
- /* 2. mota*/
+ /* 2. mota
     var num1
     do {
         num1= prompt("Sartu zenbaki positibo oso bat: ")
@@ -24,9 +24,9 @@ function Faktoriala()
     for(i=1;i<=num1;i++){
         a=i*a
     }
-    return a;
+    return a;*/
 
-    /* 3. mota    */
+    /* 3. mota  
     var num1
     let re = /^[0-9]+$/g;
     do {

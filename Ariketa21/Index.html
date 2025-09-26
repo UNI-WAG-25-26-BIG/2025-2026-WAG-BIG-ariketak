@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+
+        #container {
+            text-align: center;
+            width: 40%;
+            margin-left:30%
+        }
+        #Atzera {
+            float: left;
+        }
+        #Aurrera {
+            float: right;
+        }
+        body {
+            margin:auto;
+        }
+        .botoia {
+            width: 150px;
+            padding:10px 20px 10px 20px;
+            background-color: brown;
+            color: wheat;
+            border-radius: 20px;
+        }
+        .botoia:hover {
+            background-color: orangered;
+            cursor:pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+        <p>Aurrera edo atzera klikatu</p>
+        <h3 id="titulua">Kamiseta 6</h3>
+        <div>
+            <img id="irudia" src="img/6.jpg" alt="Kamiseta 6">
+        </div>
+        <div>
+            <button id="Atzera" class="botoia" onclick="AtzeraEgin()"> << Atzera</button>
+            <button id="Aurrera" class="botoia" onclick="AurreraEgin()"> >> Aurrera</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/mugimendua.js"></script>
+</body>
+</html>
