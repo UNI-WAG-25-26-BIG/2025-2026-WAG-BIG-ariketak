@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <p id="parrafoa">If you click on the "Hide" button, I will disappear.</p>
+    <img id="irudia2" src="">
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+    <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+    <p>Name: <input type="text" id="box" value="Mickey Mouse"></p>
+    <p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+    <button id="btn1">Show Text</button>
+    <button id="btn2">Show HTML</button>
+    <button id="btn3">Show Value</button>
+    <button id="btn4">Show href Value</button>
+
+    <form class="needs-validation" novalidate>
+        <div class="form-row">
+        <div class="col-md-6 mb-3">
+        <label for="validationCustom01">First name</label>
+        <input type="text" class="form-control" id="validationCustom01" value="Mark" required><div class="valid-feedback">
+        Looks good!
+        </div>
+        </div>
+        <div class="col-md-6 mb-3">
+        <label for="validationCustom02">Last name</label>
+        <input type="text" class="form-control" id="validationCustom02" value="Otto" required><div class="valid-feedback">
+        Looks good!
+        </div>
+        </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+
+    <div id="bat">
+<p>Primer párrafo</p>
+<p>Otro párrafo</p>
+<p>Tecer párrafo</p>
+<p>Uno más</p>
+<p>y se acabo</p>
+</div>
+<input type="submit" value="Nuevo">
+
+<div>red</div>
+<div>blue</div>
+<div>red</div>
+<div>white</div>
+<div>red</div>
+<div>green</div>
+<div>orange</div>
+<div>red</div>
+<div>nada</div>
+<div>red</div>
+<div>blue</div>
+
+<span style="border:1px solid black" id="capa0">Capa donde cambiaremos la propiedad outlineWidth</span><br>
+<input type="button" id="boton0" value="Cambiar a 15px el grosor del borde exterior del elemento">
+<br>
+<br>
+<span style="border:1px solid black" id="capa1">Capa donde cambiaremos la propiedad borderWidth</span><br>
+<input type="button" id="boton1" value="Cambiar a 10px el grosor del borde del elemento en 3 segundos">
+<br>
+<br>
+<span style="border:1px solid black" id="capa2">Capa donde cambiaremos la propiedad borderBottomWidth</span><br>
+<input type="button" id="boton2" value="Cambiar a 20px el grosor del borde inferior del elemento en 5 segundos y callback">
+<br>
+<br>
+<span style="border:1px solid black" id="capa3">Capa donde cambiaremos la propiedad borderTopWidth</span><br>
+<input type="button" id="boton3" value="Cambiar a 15px el grosor del borde superior del elemento y callback">
+<br>
+<br>
+<span style="border:1px solid black" id="capa4">Capa donde cambiaremos la propiedad borderLeftWidth y borderRightWidth</span><br><input type="button" id="boton4" value="Cambiar a 10px el grosor del borde izquierdo y a 20px el derecho"></span>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("p").hide();
+        });
+        $("#show").click(function(){
+            $("#parrafoa").show();
+        });
+        $("#irudia2").hover(function(){
+            $("#parrafoa").hide();
+        } , function() {
+            $("#parrafoa").show();
+        });
+        $("#btn1").click(function(){
+            alert("Text: " + $("#test").text());
+        });
+        $("#btn2").click(function(){
+            alert("HTML: " + $("#test").html());
+        });
+        $("#btn3").click(function(){
+            alert("Value: " + $("#box").val());
+        });
+        $("#btn4").click(function(){
+            alert($("#w3s").attr("href"));
+        });
+
+        $('.needs-validation').on('submit', function(e) {
+            if (!this.checkValidity()) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            $(this).addClass('was-validated');
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        $("p").each(function(i){
+if(i%2==0){
+$(this).css("background-color", "#eee");
+}else{
+$(this).css("background-color", "#ccc");
+}
+});
+$("input:submit").click(function() {
+$("#bat").append("<p>Otro mas</p>");
+});
+
+$("div").each(function(i){
+elemento = $(this);
+if(elemento.html() == "white")
+return true;
+if(elemento.html() == "nada")
+return false;
+elemento.css("color", elemento.html());
+});
+$("#boton0").click(function(){
+$("#capa0").animate({outlineWidth:"15px"});
+});
+$("#boton1").click(function(){
+$("#capa1").animate({borderWidth:"10px"},3000);
+});
+$("#boton2").click(function(){
+$("#capa2").animate({borderBottomWidth:"20px"},5000,function() {alert ('Efecto terminado!');});
+});
+$("#boton3").click(function(){
+$("#capa3").animate({borderTopWidth:"15px"},function() {alert ('Efecto terminado!');});
+});
+$("#boton4").click(function(){
+$("#capa4").animate({borderLeftWidth:"10px", borderRightWidth:"20px"});
+});
+
+    });
+</script>
+</body>
+</html>

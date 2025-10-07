@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="eu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ES6 Ariketa: Hitzak prozesatu</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="card" role="main">
+      <h1>Hitzak prozesatu</h1>
+      <p class="sub">Sartu hiru hitz eta ikusi emaitzak: lehenengo hitza letra handiz, azkenengoa letra txikiz eta hiruretatik luzera handiena dituena bistaratuko dira .</p>
+
+      <form id="form">
+        <div class="row">
+          <div>
+            <label for="w1">1. hitza</label>
+            <input id="w1" type="text" placeholder="adib. Kaixo" required />
+          </div>
+          <div>
+            <label for="w2">2. hitza</label>
+            <input id="w2" type="text" placeholder="adib. Uni eibar-ermua" required />
+          </div>
+          <div>
+            <label for="w3">3. hitza</label>
+            <input id="w3" type="text" placeholder="adib. Wag" required />
+          </div>
+        </div>
+        <div class="actions">
+          <button class="primary" type="submit">Prozesatu</button>
+          <button type="button" id="clearBtn">Garbitu</button>
+        </div>
+      </form>
+
+      <section id="output" class="out" aria-live="polite" hidden>
+        <div class="kv">
+          <b>Lehen hitza (MAIUS):</b>
+          <span id="first"></span>
+          <b>Azken hitza (minus):</b>
+          <span id="last"></span>
+          <b>Luzerarik handiena:</b>
+          <span id="maxlen" class="ok"></span>
+          <b>Hitzak (zerrenda):</b>
+          <span id="list" class="muted"></span>
+        </div>
+      </section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
