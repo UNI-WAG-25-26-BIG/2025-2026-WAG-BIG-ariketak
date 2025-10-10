@@ -1,0 +1,101 @@
+
+<html> 
+  <head> 
+      <title>DAW klasea</title>
+  </head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <body>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+                <h1>DAW klasea</h1>
+                <h3>Formularioak eta JavaScript</h3> 
+                <form onsubmit="return false" onreset="garbitu()">
+                    <div class="form-group">
+                      <label for="inputIzena">Zuzentzeko era:</label>
+                      <input type="radio" name="gender" value="jauna" checked onclick="changePedro()"> Jauna
+                      <input type="radio" name="gender" value="andrea" onclick="changeVilma()"> Andrea
+                    </br>
+                      <label for="inputIzena">Izena</label>
+                      <input type="text" class="form-control" id="inputIzena" placeholder="Izena">          
+                      <label for="inputIzena">Abizena</label>
+                      <input type="text" class="form-control" id="inputAbizena" placeholder="Abizena">        
+                      <label for="inputHelbidea">Helbidea</label>
+                      <input type="text" class="form-control" id="inputHelbidea" placeholder="X Kalea">
+                      <label for="inputHerrialdea">Herrialdea</label>
+                        <select id="inputHerrialdea" class="form-control">
+                          <option selected>Aukeratu...</option>
+                          <option>Bizkaia</option>
+                          <option>Gipuzkoa</option>
+                        </select>
+                      <label>Gustokoena:</label>
+                      <input type="checkbox" value="Liburuak" id="InputLiburuak"> Liburuak
+                      <input type="checkbox" value="Pelikulak" id="InputPelikulak"> Pelikulak <br>
+
+                      <button type="submit" class="btn btn-primary" onclick="textuaDatuekin()">Bidali</button>
+
+                      <button type="reset">Ezeztatu</button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+              <img id="irudia" src="caraHombre.jpg">
+              <h2>Sartu dituzun datuak:</h2>
+              <div id="datuak">
+                <p id="Izena"></p>
+                <p id="Abizena"></p>
+                <p id="Helbidea"></p>
+                <p id="Herrialdea"></p>
+                <p id="Gustokoa"></p>
+            </div>
+            </div>
+          </div>   
+        </div>
+        <script>
+          function changePedro()
+          {
+              document.getElementById("irudia").src="caraHombre.jpg";
+          }
+          function changeVilma()
+          {
+            document.getElementById("irudia").src="caraMujer.jpg";
+          }
+
+          function textuaDatuekin()
+          {
+              var izena = document.getElementById("inputIzena").value;
+              var abizena = document.getElementById("inputAbizena").value;
+              var helbidea = document.getElementById("inputHelbidea").value;
+              var herrialdea = document.getElementById("inputHerrialdea").value;
+              var liburuak = document.getElementById("InputLiburuak");
+              var pelikulak = document.getElementById("InputPelikulak");
+
+              var pIzena = document.getElementById("Izena");
+              pIzena.innerHTML = izena;
+              var pAbizena = document.getElementById("Abizena");
+              pAbizena.innerHTML = abizena;
+              var pHelbidea = document.getElementById("Helbidea");
+              pHelbidea.innerHTML = helbidea;
+              var pHerrialdea = document.getElementById("Herrialdea");
+              pHerrialdea.innerHTML = herrialdea;
+
+              var pGustokoa = document.getElementById("Gustokoa");
+              var gustokoa="";
+              if(liburuak.checked == true){ 
+                gustokoa = "Liburuak gustoko ditu.";
+              }
+              if(pelikulak.checked == true){
+                gustokoa += " Pelikulak gustoko ditu.";
+              }
+              pGustokoa.innerHTML = gustokoa;
+          }
+          function garbitu()
+          {
+            document.getElementById("datuak").innerHTML="";
+          }
+        </script>
+  </body> 
+  </html>
+  
