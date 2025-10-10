@@ -1,0 +1,10 @@
+.container{
+    height: 800px;
+    background: url('../images/spacestars.jpg') repeat;
+}
+
+#rocket{
+    position: relative;
+    left: 50%;
+    top: 0;
+}
