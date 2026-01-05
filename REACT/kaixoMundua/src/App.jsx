@@ -2,6 +2,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Kaixo from './Kaixo.jsx'
+import Comment from "./Comment";
+
+const comment = {
+  date: new Date(2025, 3, 12),
+  text: 25,
+  author: {
+    name: "Hola",
+    avatarUrl: "https://cdn-food.tribune.com.pk/users/user.png"
+  }
+};
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +39,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Kaixo />
+      <Comment date={comment.date} text={comment.text} author={comment.author} />
     </>
   )
 }

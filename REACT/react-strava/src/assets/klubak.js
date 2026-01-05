@@ -1,0 +1,47 @@
+export const mock1 = {
+    "klubak" : [
+        {
+          "id": 1,
+          "name": "uni eibar daw2",
+          "cover_photo_small": "/img/klubadaw2.jpg",
+          "sport_type": "running",
+          "privatea": true,
+          "member_count": 13,
+          "description": "DAW 2. mailako ikasleak",
+          "club_type": "company",
+        },
+        {
+          "id": 2,
+          "name": "uni eibar dam2",
+          "cover_photo_small": "/img/klubadam2.jpg",
+          "sport_type": "biking",
+          "privatea": false,
+          "member_count": 9,
+          "description": "DAM 2. mailako ikasleak",
+          "club_type": "company",
+        },
+        {
+          "id": 3,
+          "name": "uni eibar dam1",
+          "cover_photo_small": "/img/klubadam1.jpg",
+          "sport_type": "swimming",
+          "privatea": true,
+          "member_count": 0,
+          "description": "DAM 1. mailako ikasleak",
+          "club_type": "company",
+        },
+        {
+          "id": 4,
+          "name": "uni eibar irakasleak",
+          "cover_photo_small": "/img/klubairakasleak.jpg",
+          "sport_type": "running",
+          "privatea": true,
+          "member_count": 20,
+          "description": "Uniko irakasleak",
+          "club_type": "company",
+        },
+    ],
+    "total":4,
+    "skip":4,
+    "limit":4
+}

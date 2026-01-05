@@ -1,0 +1,100 @@
+.emaitzak-wrapper {
+  padding: 20px;
+}
+
+/* La rejilla de tarjetas */
+#emaitzak {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* Tarjeta */
+.kluba {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 columnas */
+  gap: 12px;
+  align-items: start;
+  background-color: #fff;
+}
+
+/* Columna izquierda (texto): ocupa 8/12 en escritorio */
+.kluba-info {
+  grid-column: 1 / span 8;
+}
+
+.kluba-info h2 {
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+/* Imagen derecha (ocupa 4/12) */
+.kluba-cover {
+  grid-column: 9 / -1;
+  width: 100%;
+  height: 180px;        /* altura fija para tarjetas uniformes */
+  object-fit: cover;    /* recorte agradable */
+  border-radius: 8px;
+  display: block;
+}
+
+/* Etiquetas y detalles */
+.label {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.lock {
+  font-size: 16px;
+  margin-left: 6px;
+}
+
+.count {
+  background-color: orange;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.kluba-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.details-button {
+  background-color: #17a2b8;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Responsive: en pantallas estrechas apila (texto arriba, imagen abajo) */
+@media (max-width: 720px) {
+  .kluba {
+    grid-template-columns: 1fr; /* una sola columna */
+  }
+  .kluba-info {
+    grid-column: 1 / -1;
+  }
+  .kluba-cover {
+    grid-column: 1 / -1;
+    height: 200px; /* un poco más alta en móvil */
+  }
+}
