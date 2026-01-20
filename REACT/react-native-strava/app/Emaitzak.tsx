@@ -1,15 +1,17 @@
+// Emaitzak.tsx
 import React from "react";
 import {
-    FlatList,
-    Image,
-    Pressable,
-    StyleSheet,
-    Text,
-    useWindowDimensions,
-    View,
+  FlatList,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
 } from "react-native";
 
-
+import { router } from "expo-router";
+import { IMAGE_MAP } from "../assets/assets-map";
 import type { Kluba } from "./index";
 
 type Props = {
@@ -17,13 +19,17 @@ type Props = {
   onDetailsPress?: (item: Kluba) => void;
 };
 
-export default function Emaitzak({ emaitza = [], onDetailsPress }: Props) {
+export default function Emaitzak({ emaitza = [] }: Props) {
   const { width } = useWindowDimensions();
   const isSmall = width < 720;
 
   const renderItem = ({ item }: { item: Kluba }) => {
     const clubType = item.club_type ? item.club_type.toUpperCase() : null;
     const memberCount = item.member_count ?? 0;
+    const imageSource =
+      item.cover_photo_small && IMAGE_MAP[item.cover_photo_small]
+      ? IMAGE_MAP[item.cover_photo_small]
+      : require("../assets/img/generikoa.jpg");
 
     return (
       <View style={[styles.card, isSmall && styles.cardSmall]}>
@@ -58,7 +64,9 @@ export default function Emaitzak({ emaitza = [], onDetailsPress }: Props) {
           <View style={styles.bottom}>
             <Pressable
               style={styles.detailsButton}
-              onPress={() => onDetailsPress?.(item)}
+              onPress={() =>
+                router.push({ pathname: "/Jarduerak", params: { id: String(item.id) } })
+              }
             >
               <Text style={styles.detailsButtonText}>🛈 Detaileak ikusi</Text>
             </Pressable>
@@ -68,7 +76,7 @@ export default function Emaitzak({ emaitza = [], onDetailsPress }: Props) {
         {item.cover_photo_small ? (
           <Image
             style={[styles.cover, isSmall && styles.coverSmall]}
-            source={{ uri: item.cover_photo_small }}
+            source={imageSource}
             accessibilityLabel="kluba"
           />
         ) : null}
